@@ -89,17 +89,14 @@
         <div class="collection-item d-flex flex-wrap my-5">
           <div class="col-md-6 column-container">
             <div class="image-holder">
-              <img src="<?= base_url('template/')?>images/single-image-2.jpg" alt="collection" class="product-image img-fluid">
+              <img src="<?= base_url('template/')?>images/produk/product-item-11.jpg"  alt="collection" class="product-image img-fluid">
             </div>
           </div>
           <div class="col-md-6 column-container bg-white">
             <div class="collection-content p-5 m-0 m-md-5">
-              <h3 class="element-title text-uppercase">Classic winter collection</h3>
-              <p>Dignissim lacus, turpis ut suspendisse vel tellus. Turpis purus, gravida orci, fringilla a. Ac sed eu
-                fringilla odio mi. Consequat pharetra at magna imperdiet cursus ac faucibus sit libero. Ultricies quam
-                nunc, lorem sit lorem urna, pretium aliquam ut. In vel, quis donec dolor id in. Pulvinar commodo mollis
-                diam sed facilisis at cursus imperdiet cursus ac faucibus sit faucibus sit libero.</p>
-              <a href="#" class="btn btn-dark text-uppercase mt-3">Shop Collection</a>
+              <h3 class="element-title text-uppercase">Owner Zahira</h3>
+              <p>Leni is a passionate entrepreneur with a strong interest in fashion and lifestyle. With her creative vision, she founded Brown Boutique to bring stylish, elegant, and affordable fashion pieces to her community. Her goal is to combine modern trends with a touch of Indonesian identity.</p>
+              <a href="https://www.instagram.com/leinni_wijayantidevi/" target="_blank" class="btn btn-dark text-uppercase mt-3">visit sosial media</a>
             </div>
           </div>
         </div>
@@ -158,30 +155,6 @@
     </div>
     <div class="swiper testimonial-swiper overflow-hidden my-5">
       <div class="swiper-wrapper d-flex">
-        <div class="swiper-slide">
-          <div class="testimonial-item text-center">
-            <blockquote>
-              <p>“More than expected crazy soft, flexible and best fitted white simple denim shirt.”</p>
-              <div class="review-title text-uppercase">casual way</div>
-            </blockquote>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="testimonial-item text-center">
-            <blockquote>
-              <p>“Best fitted white denim shirt more than expected crazy soft, flexible</p>
-              <div class="review-title text-uppercase">uptop</div>
-            </blockquote>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="testimonial-item text-center">
-            <blockquote>
-              <p>“Best fitted white denim shirt more white denim than expected flexible crazy soft.”</p>
-              <div class="review-title text-uppercase">Denim craze</div>
-            </blockquote>
-          </div>
-        </div>
         <div class="swiper-slide">
           <div class="testimonial-item text-center">
             <blockquote>
@@ -288,7 +261,8 @@
           </div>
           <form id="form" class="d-flex flex-wrap gap-2">
             <input type="text" name="email" placeholder="Your Email Addresss" class="form-control form-control-lg">
-            <button class="btn btn-dark btn-lg text-uppercase w-100">Sign Up</button>
+            <input type="text" name="message" placeholder="Your Message" class="form-control form-control-lg">
+            <button class="btn btn-dark btn-lg text-uppercase w-100">Send</button>
           </form>
         </div>
       </div>

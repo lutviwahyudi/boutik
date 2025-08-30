@@ -24,16 +24,16 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3">
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="<?= base_url('#home') ?>" id="home" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+                  <a class="nav-link" href="<?= base_url('#home') ?>">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="<?= base_url('#produk') ?>" id="produk" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                  <a class="nav-link" href="<?= base_url('#produk') ?>">Products</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="<?= base_url('#testimoni') ?>" id="testimoni" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Testimoni</a>
+                  <a class="nav-link" href="<?= base_url('#testimoni') ?>">Testimoni</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="<?= base_url('#contact') ?>" id="contact" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+                  <a class="nav-link" href="<?= base_url('#contact') ?>">Contact</a>
                 </li>
               </ul>
             </div>
