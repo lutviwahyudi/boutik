@@ -3,11 +3,11 @@
   <section id="billboard" class="bg-light py-5">
     <div class="container">
       <div class="row justify-content-center">
-        <h3 class="section-title text-center mt-4" data-aos="fade-up">New Collections</h3>
+        <h3 class="section-title text-center mt-4" data-aos="fade-up">Zahira Boutik</h3>
         <div class="col-md-6 text-center" data-aos="fade-up" data-aos-delay="300">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptas ut dolorum consequuntur, adipisci
-            repellat! Eveniet commodi voluptatem voluptate, eum minima, in suscipit explicabo voluptatibus harum,
-            quibusdam ex repellat eaque!</p>
+          <p>Tempatnya fashion trendy & elegan untuk tampil percaya diri setiap hari.
+Dari outfit casual sampai style kekinian, semua tersedia dengan kualitas terbaik dan harga ramah kantong.
+Belanja sekarang, upgrade style kamu!</p>
         </div>
       </div>
     </div>
@@ -129,7 +129,7 @@
                   <h5 class="text-uppercase fs-5 mt-3">
                     <a href="index.html"><?= esc($c['name']) ?></a>
                   </h5>
-                  <p><?= esc($c['describe']) ?></p>
+                  <p><?= esc($c['description']) ?></p>
                   <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span><?= 'Rp ' . number_format($c['price'], 0, ',', '.') ?></span></a>
                 </div>
               </div>
@@ -146,6 +146,51 @@
           <use xlink:href="#arrow-right"></use>
         </svg></div>
     </div>
+
+    <!-- Product Detail Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img id="modalProductImage" src="" alt="product" class="img-fluid">
+          </div>
+          <div class="col-md-6">
+            <h4 id="modalProductName" class="text-uppercase"></h4>
+            <p id="modalProductDescription"></p>
+            <h5 id="modalProductPrice" class="text-primary mt-3"></h5>
+            <button type="button" class="btn btn-dark btn-lg w-100 mt-3">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to populate modal -->
+<script>
+document.querySelectorAll('.product-item').forEach(item => {
+  item.addEventListener('click', function() {
+    const image = this.querySelector('img').src;
+    const name = this.querySelector('h5 a').textContent;
+    const description = this.querySelector('p').textContent;
+    const price = this.querySelector('[data-after]').textContent;
+    
+    document.getElementById('modalProductImage').src = image;
+    document.getElementById('modalProductName').textContent = name;
+    document.getElementById('modalProductDescription').textContent = description;
+    document.getElementById('modalProductPrice').textContent = price;
+    
+    const modal = new bootstrap.Modal(document.getElementById('productModal'));
+    modal.show();
+  });
+});
+</script>
   </section>
 
   <!-- testimonial-page -->

@@ -9,7 +9,7 @@ class ClothesModel extends Model
     protected $table      = 'tb_clothes';
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['name', 'image', 'describe', 'price'];
+    protected $allowedFields = ['name', 'image', 'description', 'price'];
 
     public function getAll()
     {
