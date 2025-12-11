@@ -3,7 +3,7 @@
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
         <h4 class="text-uppercase">Best Selling Items</h4>
-        <a href="index.html" class="btn-link">View All Products</a>
+        <a href="<?= base_url('/allProduct') ?>" class="btn-link">View All Products</a>
       </div>
       <div class="swiper product-swiper open-up" data-aos="zoom-out">
         <div class="swiper-wrapper d-flex">
@@ -22,7 +22,7 @@
                     <a href="index.html"><?= esc($c['name']) ?></a>
                   </h5>
                   <p><?= esc($c['description']) ?></p>
-                  <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span><?= 'Rp ' . number_format($c['price'], 0, ',', '.') ?></span></a>
+                  <a href="index.html" class="text-decoration-none" data-after="Pesan sekarang"><span><?= 'Rp ' . number_format($c['price'], 0, ',', '.') ?></span></a>
                 </div>
               </div>
             </div>
@@ -56,7 +56,22 @@
             <h4 id="modalProductName" class="text-uppercase"></h4>
             <p id="modalProductDescription"></p>
             <h5 id="modalProductPrice" class="text-primary mt-3"></h5>
-            <button type="button" class="btn btn-dark btn-lg w-100 mt-3">Add to Cart</button>
+            <?php 
+              $nama = urlencode($c['name']);
+              $harga = urlencode('Rp ' . number_format($c['price'], 0, ',', '.'));
+              $gambar = urlencode(base_url($c['image']));
+
+              $waMessage = "Halo, saya mau pesan:%0A".
+                          "Produk: $nama%0A".
+                          "Harga: $harga%0A".
+                          "Gambar: $gambar";
+              ?>
+
+              <a href="https://wa.me/6281386225719?text=<?= $waMessage ?>" 
+                target="_blank" 
+                class="btn btn-dark btn-lg w-100 mt-3">
+                Pesan Sekarang
+              </a>
           </div>
         </div>
       </div>

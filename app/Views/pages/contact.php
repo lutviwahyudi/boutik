@@ -4,7 +4,7 @@
       <div class="row justify-content-center">
         <div class="col-md-8 py-5 my-5">
           <div class="subscribe-header text-center pb-3">
-            <h3 class="section-title text-uppercase">Sign Up for our newsletter</h3>
+            <h3 class="section-title text-uppercase">Sign Up for testimonial</h3>
           </div>
           <form id="form" class="d-flex flex-wrap gap-2">
             <input type="text" name="email" placeholder="Your Email Addresss" class="form-control form-control-lg">

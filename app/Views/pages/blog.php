@@ -6,25 +6,25 @@
         <a href="index.html" class="btn-link">View All</a>
       </div>
       <div class="row">
+        <?php foreach ($blog as $bl) : ?>
         <div class="col-md-4">
           <article class="post-item">
             <div class="post-image">
-              <a href="index.html">
-                <img src="<?= base_url('template/')?>images/post-image1.jpg" alt="image" class="post-grid-image img-fluid">
-              </a>
+                <img src="<?= $bl['image']; ?>" alt="image" class="post-grid-image img-fluid">
             </div>
             <div class="post-content d-flex flex-wrap gap-2 my-3">
               <div class="post-meta text-uppercase fs-6 text-secondary">
                 <span class="post-category">Fashion /</span>
-                <span class="meta-day"> jul 11, 2022</span>
+                <span class="meta-day"> <?= $bl['time']?></span>
               </div>
               <h5 class="post-title text-uppercase">
-                <a href="index.html">How to look outstanding in pastel</a>
+                <a href="index.html"><?= $bl['title']?></a>
               </h5>
-              <p>Dignissim lacus,turpis ut suspendisse vel tellus.Turpis purus,gravida orci,fringilla...</p>
+              <p><?= $bl['description']?></p>
             </div>
           </article>
         </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
