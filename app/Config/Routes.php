@@ -13,4 +13,5 @@ $routes->get('/register', 'Auth::register');
 $routes->post('/registerPost', 'Auth::registerPost');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/profile', 'Auth::profile');
+$routes->post('/postMessage', 'Home::postMessage');
 $routes->setAutoRoute(true);

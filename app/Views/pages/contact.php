@@ -6,10 +6,10 @@
           <div class="subscribe-header text-center pb-3">
             <h3 class="section-title text-uppercase">Sign Up for testimonial</h3>
           </div>
-          <form id="form" class="d-flex flex-wrap gap-2">
-            <input type="text" name="email" placeholder="Your Email Addresss" class="form-control form-control-lg">
+          <form action="<?= base_url('/postMessage')?>" class="d-flex flex-wrap gap-2" method="post">
+            <input type="email" name="email" placeholder="Your Email Addresss" class="form-control form-control-lg">
             <input type="text" name="message" placeholder="Your Message" class="form-control form-control-lg">
-            <button class="btn btn-dark btn-lg text-uppercase w-100">Send</button>
+            <button class="btn btn-dark btn-lg text-uppercase w-100">send</button>
           </form>
         </div>
       </div>
@@ -24,42 +24,42 @@
       <div class="col-6 col-sm-4 col-md-2">
         <div class="insta-item">
           <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="<?= base_url('template/')?>images/insta-item1.jpg" alt="instagram" class="insta-image img-fluid">
+            <img src="<?= base_url('template/')?>images/produk/IMG-20250819-WA0197.jpg" alt="instagram" class="insta-image img-fluid">
           </a>
         </div>
       </div>
       <div class="col-6 col-sm-4 col-md-2">
         <div class="insta-item">
           <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="<?= base_url('template/')?>images/insta-item2.jpg" alt="instagram" class="insta-image img-fluid">
+            <img src="<?= base_url('template/')?>images/produk/IMG-20250819-WA0195.jpg" alt="instagram" class="insta-image img-fluid">
           </a>
         </div>
       </div>
       <div class="col-6 col-sm-4 col-md-2">
         <div class="insta-item">
           <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="<?= base_url('template/')?>images/insta-item3.jpg" alt="instagram" class="insta-image img-fluid">
+            <img src="<?= base_url('template/')?>images/produk/IMG-20250819-WA0202.jpg" alt="instagram" class="insta-image img-fluid">
           </a>
         </div>
       </div>
       <div class="col-6 col-sm-4 col-md-2">
         <div class="insta-item">
           <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="<?= base_url('template/')?>images/insta-item4.jpg" alt="instagram" class="insta-image img-fluid">
+            <img src="<?= base_url('template/')?>images/produk/IMG-20250819-WA0198.jpg" alt="instagram" class="insta-image img-fluid">
           </a>
         </div>
       </div>
       <div class="col-6 col-sm-4 col-md-2">
         <div class="insta-item">
           <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="<?= base_url('template/')?>images/insta-item5.jpg" alt="instagram" class="insta-image img-fluid">
+            <img src="<?= base_url('template/')?>images/produk/IMG-20250819-WA0199.jpg" alt="instagram" class="insta-image img-fluid">
           </a>
         </div>
       </div>
       <div class="col-6 col-sm-4 col-md-2">
         <div class="insta-item">
           <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-            <img src="<?= base_url('template/')?>images/insta-item6.jpg" alt="instagram" class="insta-image img-fluid">
+            <img src="<?= base_url('template/')?>images/produk/IMG-20250819-WA0195.jpg" alt="instagram" class="insta-image img-fluid">
           </a>
         </div>
       </div>

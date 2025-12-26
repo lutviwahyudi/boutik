@@ -42,4 +42,23 @@ class Home extends BaseController
         ];
         return view('pages/allProduct', $data);
     }
+
+    public function postMessage(){
+
+         $messageModel = new MessageModel();
+
+    $name  = session()->get('name');
+    $nomer = session()->get('nomer');
+
+    $data = [
+        'name'    => $name,
+        'email'   => $this->request->getPost('email'),
+        'nomer'   => $nomer,
+        'message' => $this->request->getPost('message'),
+        'date'    => date('Y-m-d H:i:s'),
+    ];
+
+    $messageModel->insert($data);
+        
+    }
 }
