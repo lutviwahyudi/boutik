@@ -1,3 +1,5 @@
+<?= view('layout/header') ?>
+<?= view('layout/navbar') ?>
 <!-- contact-page -->
   <section class="newsletter bg-light" id="contact" style="background: url(<?= base_url('template/')?>images/pattern-bg.png) no-repeat;">
     <div class="container">
@@ -15,3 +17,4 @@
       </div>
     </div>
   </section>
+<?= view('layout/footer') ?>

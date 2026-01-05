@@ -54,6 +54,7 @@ class Auth extends Controller
         if ($user) {
             if (password_verify($password, $user['password'])) {
                 $session->set([
+                    'isLoggedIn' => true,
                     'id' => $user['id'],
                     'name' => $user['name'],
                     'email' => $user['email'],
@@ -71,21 +72,7 @@ class Auth extends Controller
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/');
     }
     
-
-    public function profile()
-{
-if (!session()->get('logged_in')) {
-return redirect()->to('/login');
-}
-
-
-$model = new UserModel();
-$data['user'] = $model->find(session()->get('id'));
-
-
-return view('auth/profile', $data);
-}
 }

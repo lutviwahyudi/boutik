@@ -31,8 +31,7 @@
                                 <a class="nav-link" href="<?= base_url('#testimoni') ?>">Testimoni</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= base_url('#contact'
-                                ) ?>">Contact</a>
+                                <a class="nav-link" href="<?= base_url('/contact') ?>">Contact</a>
                             </li>
 
 

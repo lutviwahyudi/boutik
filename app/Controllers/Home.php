@@ -6,6 +6,7 @@ use App\Models\ClothesModel;
 use App\Models\BrandModel;
 use App\Models\BlogModel;
 use App\Models\MessageModel;
+use App\Models\UserModel;
 
 class Home extends BaseController
 {
@@ -13,12 +14,14 @@ class Home extends BaseController
     protected $brandModel;
     protected $blogModel;
     protected $messageModel;
+    protected $userModel;
 
     public function __construct() {
         $this->clothesModel = new ClothesModel();
         $this->brandModel = new BrandModel();
         $this->blogModel = new BlogModel();
         $this->messageModel = new MessageModel();
+        $this->userModel = new UserModel();
     }
 
     public function index(){
@@ -33,6 +36,14 @@ class Home extends BaseController
         'message' => $this->messageModel->findAll()
     ];
     return view('pages/home', $data);
+    }
+
+    public function profile(){
+        $data = [
+            'title' => 'My Profile',
+            'user' => $this->userModel->find(session()->get('id'))
+        ];
+        return view('pages/profile', $data);
     }
 
     public function allProduct(){
@@ -60,5 +71,12 @@ class Home extends BaseController
 
     $messageModel->insert($data);
         
+    }
+
+    public function contact(){
+        $data = [
+            'title' => 'Contact Us',
+        ];
+        return view('pages/contact', $data);
     }
 }

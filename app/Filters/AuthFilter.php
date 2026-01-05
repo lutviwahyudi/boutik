@@ -17,7 +17,7 @@ class AuthFilter implements FilterInterface
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        //
+     
     }
 
 }
