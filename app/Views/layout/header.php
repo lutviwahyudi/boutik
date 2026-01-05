@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="<?= base_url('template/')?>css/vendor.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" type="text/css" href="<?= base_url('template/')?>style.css">
-
+ <link rel="icon" type="image/png" href="<?= base_url('template/') ?>images/zahira.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link

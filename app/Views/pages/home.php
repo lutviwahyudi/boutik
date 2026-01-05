@@ -112,5 +112,6 @@ Belanja sekarang, upgrade style kamu!</p>
       </div>
     </div>
   </section>
-  <?= view('pages/contact'); ?>
+  <section class="newsletter bg-light" id="contact" style="background: url(<?= base_url('template/')?>images/pattern-bg.png) no-repeat;">
+  </section>
 <?= view('layout/footer'); ?>
