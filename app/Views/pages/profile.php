@@ -17,7 +17,7 @@
           <span class="badge bg-primary"><?= $user['role'] ?? 'User' ?></span>
 
           <div class="d-grid mt-4">
-            <a href="<?= base_url('/EditUser') ?>" class="btn btn-primary">
+            <a href="<?= base_url('/edit-user')?>" class="btn btn-primary">
               Edit Profile
             </a>
           </div>
@@ -50,7 +50,7 @@
 
           <div class="row mb-3">
             <div class="col-sm-4 fw-semibold">No HP</div>
-            <div class="col-sm-8"><?= $user['phone'] ?? '-' ?></div>
+            <div class="col-sm-8"><?= $user['nomer'] ?? '-' ?></div>
           </div>
 
           <div class="row mb-3">

@@ -10,24 +10,23 @@
         </div>
 
         <div class="card-body">
-          <form action="<?= base_url('profile/update') ?>" method="post">
+          <form action="<?= base_url('/edit-user/' . $user['id']) ?>" method="post">
 
-           <!-- Foto Profile -->
-            <div class="text-center mb-4">
-              <img src="<?= base_url($user['image'] ?? '') ?>"
-                   class="rounded-circle mb-3"
-                   width="120" height="120"
-                   style="object-fit: cover;"
-                   id="previewImg">
+          <div class="text-center mb-4">
+            <img src="<?= base_url($user['image']) ?>"
+              class="rounded-circle mb-3"
+              width="120" height="120"
+              style="object-fit: cover;"
+              id="previewImg">
 
-              <div>
-                <input type="file" 
-                       name="photo" 
-                       class="form-control"
-                       accept="image/*"
-                       onchange="previewImage(event)">
-              </div>
-            </div>
+          <div>
+            <input type="file" 
+                  name="image" 
+                  class="form-control"
+                  accept=".jpg,.jpeg,.png"
+                  onchange="previewImage(event)">
+          </div>
+        </div>
 
             <!-- Nama -->
             <div class="mb-3">
@@ -46,8 +45,8 @@
             <!-- No HP -->
             <div class="mb-3">
               <label class="form-label">No HP</label>
-              <input type="text" name="phone" class="form-control"
-                     value="<?= $user['phone'] ?? '' ?>">
+              <input type="text" name="nomer" class="form-control"
+                     value="<?= $user['nomer'] ?? '' ?>">
             </div>
 
             <!-- Password (opsional kalau edit) -->

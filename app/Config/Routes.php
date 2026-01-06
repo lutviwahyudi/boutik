@@ -14,6 +14,7 @@ $routes->post('/registerPost', 'Auth::registerPost');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/profile', 'Home::profile');
 $routes->post('/postMessage', 'Home::postMessage');
-$routes->get('/EditUser', 'EditUser::index');
+$routes->get('/edit-user', 'EditUser::index');
+$routes->post('/edit-user/(:num)', 'EditUser::editUser/$1');
 $routes->get('/contact', 'Home::contact', ['filter' => 'auth']);
 $routes->setAutoRoute(true);
