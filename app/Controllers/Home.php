@@ -54,6 +54,23 @@ class Home extends BaseController
         return view('pages/allProduct', $data);
     }
 
+    public function products(){
+        $data = [
+            'title' => 'Products',
+            'clothes' => $this->clothesModel->findAll()
+        ];
+        return view('dashboard/products', $data);
+    }
+
+    public function ulasan(){
+        $data = [
+            'title' => 'Ulasan',
+            'message' => $this->messageModel->findAll()
+        ];
+
+        return view('pages/ulasan', $data);
+    }
+
     public function postMessage(){
 
          $messageModel = new MessageModel();

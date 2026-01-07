@@ -13,7 +13,7 @@
           <form action="<?= base_url('/edit-user/' . $user['id']) ?>" method="post">
 
           <div class="text-center mb-4">
-            <img src="<?= base_url($user['image']) ?>"
+            <img src="<?= $user['image']?>"
               class="rounded-circle mb-3"
               width="120" height="120"
               style="object-fit: cover;"

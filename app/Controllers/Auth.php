@@ -30,7 +30,8 @@ class Auth extends Controller
         $model->save([
             'name' => $this->request->getVar('name'),
             'email' => $this->request->getVar('email'),
-            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+            'role' => 2
         ]);
 
         return redirect()->to('/login');
@@ -53,13 +54,20 @@ class Auth extends Controller
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
+                
                 $session->set([
                     'isLoggedIn' => true,
                     'id' => $user['id'],
                     'name' => $user['name'],
                     'email' => $user['email'],
+                    'role' => $user['role'],
                     'logged_in' => true
                 ]);
+
+                if ($user['role'] == 1) {
+                    return redirect()->to('dashboard');
+                }
+
                 return redirect()->to('/');
             } else {
                 return redirect()->back()->with('error', 'Password salah');

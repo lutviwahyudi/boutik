@@ -40,7 +40,7 @@
                                 <?php 
                                     $foto = session()->get('foto'); // nanti ambil dari DB
                                     $name = session()->get('name'); // nanti ambil dari DB
-                                    $fotoUrl = $foto ? base_url('uploads/'.$foto) : base_url('template/images/produk/profile.jpg'); 
+                                    $fotoUrl = $foto ? base_url('uploads/'.$foto) : base_url('/template/images/dprofile.png'); 
                                 ?>
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center" href="/profile">

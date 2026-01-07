@@ -9,7 +9,7 @@ class UserModel extends Model
 {
 protected $table = 'tb_users';
 protected $primaryKey = 'id';
-protected $allowedFields = ['name', 'image', 'email', 'nomer', 'password'];
+protected $allowedFields = ['name', 'image', 'email', 'nomer', 'password', 'role'];
 
     public function updateUser($id, $data)
     {

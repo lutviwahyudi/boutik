@@ -7,15 +7,22 @@
     <div class="col-md-4 mb-4">
       <div class="card shadow-sm text-center">
         <div class="card-body">
-          <img src="<?= base_url($user['photo'] ?? 'images/default.png') ?>"
-               class="rounded-circle mb-3"
-               width="130" height="130"
-               style="object-fit: cover;">
+          <img src="<?= base_url('uploads/' . $user['image']); ?>"
+          class="rounded-circle mb-3"
+          width="120" height="120"
+          style="object-fit: cover;"
+          id="previewImg">
+
 
           <h5 class="fw-bold"><?= $user['name'] ?></h5>
           <p class="text-muted mb-1"><?= $user['email'] ?></p>
-          <span class="badge bg-primary"><?= $user['role'] ?? 'User' ?></span>
-
+          <span class="badge bg-primary">
+          <?php if ($user['role'] == 2){
+            echo "Customer";
+          } else {
+            echo "Admin";
+          }?>      
+          </span>
           <div class="d-grid mt-4">
             <a href="<?= base_url('/edit-user')?>" class="btn btn-primary">
               Edit Profile

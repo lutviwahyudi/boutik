@@ -16,10 +16,9 @@ use CodeIgniter\Controller;
 
     public function index()
     {
-        $id = session()->get('id');
         $data = [
             'title' => 'Edit Profile',
-            'user' => $this->UserModel->find($id)
+            'user' => $this->UserModel->find(session()->get('id'))
         ];
 
 
@@ -29,29 +28,31 @@ use CodeIgniter\Controller;
 
     public function editUser($id)
     {
-            $data = [
-                'name' => $this->request->getPost('name'),
-                'email' => $this->request->getPost('email'),
-                'nomer' => $this->request->getPost('nomer')
-            ];
+        $data = [
+            'name'  => $this->request->getPost('name'),
+            'email' => $this->request->getPost('email'),
+            'nomer' => $this->request->getPost('nomer')
+        ];
 
-            $file = $this->request->getFile('image');
+        if ($this->request->getPost('password')) {
+            $data['password'] = password_hash(
+                $this->request->getPost('password'),
+                PASSWORD_DEFAULT
+            );
+        }
 
-            if ($file && $file->isValid()) {
-                $newName = $file->getRandomName();
-                $file->move('uploads/profile', $newName);
-                $data['image'] = 'uploads/profile/' . $newName;
-            }
+        $file = $this->request->getFile('image');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $newName = $file->getRandomName();
+            $file->move('uploads/', $newName);
+            $data['image'] = 'uploads/' . $newName;
+        }
 
-            if ($this->request->getPost('password')) {
-                $data['password'] = password_hash(
-                    $this->request->getPost('password'), PASSWORD_DEFAULT
-                );
-            }
+        $this->UserModel->updateUser($id, $data);
 
-            $this->UserModel->updateUser($id, $data);
-            return redirect()->to('/profile');
+        return redirect()->to('/profile');
     }
+
  }
 
 ?>
