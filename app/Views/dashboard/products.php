@@ -8,7 +8,7 @@
   <body>
 
   <div class="container mt-5">
-    <h2>Daftar Produk zahira</h2>
+    <h2>Daftar Produk zahira boutik</h2>
       <table class="table">
         <thead>
           <tr>
