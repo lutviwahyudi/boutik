@@ -1,0 +1,24 @@
+name: Deploy CI4 to Domainesia
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: 36.50.77.62
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd /home/jasadig6/public_html/boutik1/boutik
+            git pull origin main
+            php spark cache:clear
+            chmod -R 775 writable
