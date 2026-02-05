@@ -77,6 +77,4 @@
     </div>
 </div>
 
-</div>
-  <?= view('pages/contact'); ?>
 <?= view('layout/footer'); ?>

@@ -19,5 +19,8 @@ $routes->get('/ulasan', 'Home::ulasan');
 $routes->post('/postMessage', 'Home::postMessage');
 $routes->get('/edit-user', 'EditUser::index');
 $routes->post('/edit-user/(:num)', 'EditUser::editUser/$1');
+$routes->get('/edit-products/(:num)', 'EditProducts::index/$1');
+$routes->post('/editProducts/(:num)', 'EditProducts::submitEdit/$1');
+$routes->get('/delete-products/(:num)', 'EditProducts::deleteProduct/$1');
 $routes->get('/contact', 'Home::contact', ['filter' => 'auth']);
 $routes->setAutoRoute(true);

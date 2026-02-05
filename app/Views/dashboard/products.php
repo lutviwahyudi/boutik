@@ -17,6 +17,7 @@
             <th scope="col">Nama Produk</th>
             <th scope="col">price</th>
             <th scope="col">Deskripsi</th>
+            <th scope="col">Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -28,6 +29,9 @@
             <td><?= $cl['name'] ?></td>
             <td><?= $cl['price'] ?></td>
             <td><?= $cl['description'] ?></td>
+            <td>
+              <a href="<?= base_url('/edit-products/' . $cl['id']) ?>" class="btn btn-primary btn-sm">Edit</a>
+              <a href="<?= base_url('/delete-products/' . $cl['id']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
           </tr>
           <?php endforeach; ?>
         </tbody>

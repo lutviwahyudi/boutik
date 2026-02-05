@@ -15,4 +15,9 @@ class ClothesModel extends Model
     {
         return $this->findAll();
     }
+
+    public function updateProducts($id, $data)
+    {
+        return $this->update($id, $data);
+    }
 }
