@@ -37,13 +37,13 @@ class EditProducts extends Controller
     }
         $this->clothesModel->update($id, $data);
 
-        return redirect()->to('dashboard');
+        return redirect()->to('products');
     }
 
     public function deleteProduct($id)
     {
         $this->clothesModel->delete($id);
-        return redirect()->to('dashboard');
+        return redirect()->to('products');
     }
 }
 

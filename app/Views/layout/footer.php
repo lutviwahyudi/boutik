@@ -51,53 +51,41 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-002">
-            <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
-            <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
-              <li class="menu-item">
-                <a href="index.html" class="item-anchor">Home</a>
-              </li>
-              <li class="menu-item">
-                <a href="index.html" class="item-anchor">About</a>
-              </li>
-              <li class="menu-item">
-                <a href="blog.html" class="item-anchor">Services</a>
-              </li>
-              <li class="menu-item">
-                <a href="styles.html" class="item-anchor">Single item</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="item-anchor">Contact</a>
-              </li>
-            </ul>
+        <div class="col-md-9 col-sm-6">
+        <div class="footer-menu footer-menu-004 border-animation-left">
+          <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
+
+          <p>
+            Do you have any questions or suggestions?
+            <a href="mailto:lutwei21@gmail.com" class="item-anchor">
+              leni@butik.com
+            </a>
+          </p>
+
+          <p>
+            Do you need support? Give us a call.
+            <a href="https://wa.me/6281386225719" target="_blank" rel="noopener noreferrer" class="item-anchor">
+              +6281386225719
+            </a>
+          </p>
+          <p>
+            Our office address:
+            <span class="item-anchor">
+              Green Intan Residence, Jl. Intan Raya No.23, RT.002/RW.008, Pd. Pinang, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15227
+            </span>
+          <div class="mt-3 rounded overflow-hidden">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.720855157142!2d106.79606897499103!3d-6.300363093688779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ee1e18ec9b77%3A0xc064ee74022e19a3!2sGreen%20Intan%20Residence!5e0!3m2!1sen!2sid!4v1770342341425!5m2!1sen!2sid"
+            width="100%" 
+            height="180"
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-003">
-            <h5 class="widget-title text-uppercase mb-4">Help & Info</h5>
-            <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
-              <li class="menu-item">
-                <a href="#" class="item-anchor">Contact Us</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="item-anchor">Find us easy</a>
-              </li>
-              <li class="menu-item">
-                <a href="index.html" class="item-anchor">Faqs</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footer-menu footer-menu-004 border-animation-left">
-            <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
-            <p>Do you have any questions or suggestions? <a href="mailto:lutwei21@gmail.com"
-                class="item-anchor">leni@butik.com</a></p>
-            <p>Do you need support? Give us a call. <a href="tel:+6281386225719" class="item-anchor">+6281386225719</a>
-            </p>
-          </div>
-        </div>
+      </div>
+
       </div>
     </div>
     <div class="border-top py-4">

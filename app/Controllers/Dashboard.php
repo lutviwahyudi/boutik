@@ -31,6 +31,40 @@ class Dashboard extends Controller
 
         return view('dashboard/index', $data);
     }
+
+    public function addProducts()
+    {
+        $data = [
+            'title' => 'Add Products'
+        ];
+        return view('dashboard/addProducts', $data);
+    }
+
+    public function submitProducts()
+
+    {
+        $name = $this->request->getPost('name');
+        $price = $this->request->getPost('price');
+        $description = $this->request->getPost('description');  
+        $file = $this->request->getFile('image');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+        $newName = $file->getRandomName();
+        $file->move('uploads/', $newName);
+        $imagePath = 'uploads/' . $newName;
+    } else {
+        $imagePath = null;
+    }
+
+    $data = [   
+        'name' => $name,
+        'price' => $price,
+        'description' => $description,
+        'image' => $imagePath
+    ];
+
+    $this->clothesModel->insert($data);
+    return redirect()->to('dashboard');
+    }
 }
 
 ?>

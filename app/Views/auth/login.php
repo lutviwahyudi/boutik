@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?= view('layout/header')?>
 <div class="container mt-5" style="max-width: 500px;">
 <h3 class="text-center mb-4">Login</h3>
 
 
-<?php if(session()->getFlashdata('error')): ?>
-<div class="alert alert-danger"> <?= session()->getFlashdata('error') ?> </div>
+<?php if (session()->getFlashdata('error')) : ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <?= session()->getFlashdata('error'); ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
+
+<?php if (session()->getFlashdata('success')) : ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= session()->getFlashdata('success'); ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 <?php endif; ?>
 
 
@@ -32,5 +37,14 @@
 
 <p class="text-center mt-3">Belum punya akun? <a href="/register">Register</a></p>
 </div>
+<script src="<?= base_url('template')?>/js/jquery.min.js"></script>
+  <script src="<?= base_url('template')?>/js/plugins.js"></script>
+  <script src="<?= base_url('template')?>/js/SmoothScroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="<?= base_url('template/')?>js/script.min.js"></script>
 </body>
+
 </html>

@@ -3,7 +3,7 @@
   <section id="billboard" class="bg-light py-5">
     <div class="container">
       <div class="row justify-content-center">
-        <h3 class="section-title text-center mt-4" data-aos="fade-up">Zahira Boutik</h3>
+        <h3 class="section-title text-center mt-4" data-aos="fade-up">Zahira Boutique</h3>
         <div class="col-md-6 text-center" data-aos="fade-up" data-aos-delay="300">
           <p>Tempatnya fashion trendy & elegan untuk tampil percaya diri setiap hari.
 Dari outfit casual sampai style kekinian, semua tersedia dengan kualitas terbaik dan harga ramah kantong.

@@ -1,14 +1,13 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body>
-
+<?= view('layout/header') ?>
   <div class="container mt-5">
     <h2>Daftar Produk zahira boutik</h2>
+    <input type="text"
+       id="search"
+       class="form-control mb-3"
+       placeholder="Cari produk...">
+    <a href="<?= base_url('dashboard') ?>" class="btn btn-warning btn-sm mb-3">Back to Dashboard</a>
+    <a href="<?= base_url('/addProducts') ?>" class="btn btn-success btn-sm mb-3">Add Product</a>
+    <br>
       <table class="table">
         <thead>
           <tr>
@@ -20,23 +19,39 @@
             <th scope="col">Aksi</th>
           </tr>
         </thead>
-        <tbody>
-          <?php $no = 1; ?>
-          <?php foreach ($clothes as $cl) : ?>
-          <tr>
-          <th scope="row"><?= $no++ ?></th>
-            <td><img src="<?= base_url($cl['image']) ?>" alt="<?= $cl['name'] ?>" width="100"></td>
-            <td><?= $cl['name'] ?></td>
-            <td><?= $cl['price'] ?></td>
-            <td><?= $cl['description'] ?></td>
-            <td>
-              <a href="<?= base_url('/edit-products/' . $cl['id']) ?>" class="btn btn-primary btn-sm">Edit</a>
-              <a href="<?= base_url('/delete-products/' . $cl['id']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
-          </tr>
-          <?php endforeach; ?>
+        <tbody id="table-body">
+         <?= view('dashboard/_tableProducts', ['clothes' => $clothes]) ?>
         </tbody>
       </table>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="<?= base_url('template')?>/js/jquery.min.js"></script>
+  <script src="<?= base_url('template')?>/js/plugins.js"></script>
+  <script src="<?= base_url('template')?>/js/SmoothScroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="<?= base_url('template/')?>js/script.min.js"></script>
   </body>
 </html>
+
+<script>
+let timer;
+
+document.getElementById('search').addEventListener('input', function () {
+    clearTimeout(timer);
+    const q = this.value;
+
+    timer = setTimeout(() => {
+        fetch('search?q=' + encodeURIComponent(q))
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('table-body').innerHTML = html;
+            });
+    }, 400);
+});
+</script>
+
+
+
+

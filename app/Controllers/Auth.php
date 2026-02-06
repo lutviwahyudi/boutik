@@ -9,7 +9,11 @@ class Auth extends Controller
 {
     public function register()
     {
-        return view('auth/register');
+        $data = [
+            'title' => 'Halaman register'
+        ];
+
+        return view('auth/register', $data);
     }
 
     public function registerPost()
@@ -21,6 +25,8 @@ class Auth extends Controller
         ];
 
         if (!$this->validate($rules)) {
+            session()->setFlashdata('error', 'Registrasi gagal, cek data yang kamu isi.');
+
             return view('auth/register', [
                 'validation' => $this->validator
             ]);
@@ -34,12 +40,18 @@ class Auth extends Controller
             'role' => 2
         ]);
 
+        session()->setFlashdata('success', 'Registrasi berhasil! Silakan login.');
+
         return redirect()->to('/login');
     }
 
+
     public function login()
     {
-        return view('auth/login');
+        $data = [
+            'title' => 'Halaman login'
+        ];
+        return view('auth/login', $data);
     }
 
     public function loginPost()
@@ -65,7 +77,7 @@ class Auth extends Controller
                 ]);
 
                 if ($user['role'] == 1) {
-                    return redirect()->to('dashboard');
+                    return redirect()->to('/');
                 }
 
                 return redirect()->to('/');

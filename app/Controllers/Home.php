@@ -47,6 +47,7 @@ class Home extends BaseController
     }
 
     public function allProduct(){
+        
         $data = [
             'title' => 'All Products',
             'clothes' => $this->clothesModel->findAll(),
@@ -55,11 +56,30 @@ class Home extends BaseController
     }
 
     public function products(){
+        
         $data = [
             'title' => 'Products',
             'clothes' => $this->clothesModel->findAll()
         ];
         return view('dashboard/products', $data);
+    }
+
+    public function search()
+    {
+    $q = $this->request->getGet('q');
+
+    if ($q) {
+        $produk = $this->clothesModel
+            ->like('name', $q)
+            ->orLike('description', $q)
+            ->findAll();
+    } else {
+        $produk = $this->clothesModel->findAll();
+    }
+
+    return view('dashboard/_tableProducts', [
+        'clothes' => $produk
+    ]);
     }
 
     public function ulasan(){
@@ -71,24 +91,38 @@ class Home extends BaseController
         return view('pages/ulasan', $data);
     }
 
-    public function postMessage(){
+    public function postMessage()
+    {
+        $rules = [
+            'message' => 'required|min_length[5]',
+        ];
 
-         $messageModel = new MessageModel();
+        if (!$this->validate($rules)) {
+            session()->setFlashdata('error', 'Isi dulu semua data dengan benar.');
 
-    $name  = session()->get('name');
-    $nomer = session()->get('nomer');
+            return redirect()->to('contact')->withInput();
+        }
 
-    $data = [
-        'name'    => $name,
-        'email'   => $this->request->getPost('email'),
-        'nomer'   => $nomer,
-        'message' => $this->request->getPost('message'),
-        'date'    => date('Y-m-d H:i:s'),
-    ];
+        $messageModel = new MessageModel();
 
-    $messageModel->insert($data);
-        
+        $data = [
+            'name'    => session()->get('name'),
+            'email'   => session()->get('email'),
+            'nomer'   => session()->get('nomer'),
+            'message' => $this->request->getPost('message'),
+            'date'    => date('Y-m-d H:i:s'),
+        ];
+
+        $messageModel->insert($data);
+
+        session()->setFlashdata(
+            'success',
+            'Terima kasih banyak atas saran dan masukannya 🙏'
+        );
+
+        return redirect()->to('contact');
     }
+
 
     public function contact(){
         $data = [
