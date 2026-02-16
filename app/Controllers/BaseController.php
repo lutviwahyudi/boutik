@@ -42,6 +42,7 @@ abstract class BaseController extends Controller
      * The creation of dynamic property is deprecated in PHP 8.2.
      */
     // protected $session;
+    protected $session;
 
     /**
      * @return void
@@ -54,5 +55,19 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = service('session');
+        $this->session = \Config\Services::session();
+
+        // If user is logged in, load the current user from database and
+        // make it available to all views as $currentUser
+        if ($this->session->get('logged_in')) {
+            $userId = $this->session->get('id');
+            if ($userId) {
+                $userModel = new \App\Models\UserModel();
+                $user = $userModel->find($userId);
+                if ($user) {
+                    \Config\Services::renderer()->setVar('currentUser', $user);
+                }
+            }
+        }
     }
 }

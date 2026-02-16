@@ -17,6 +17,7 @@ $routes->get('/register', 'Auth::register');
 $routes->post('/registerPost', 'Auth::registerPost');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/profile', 'Home::profile');
+$routes->get('/blog/status', 'Home::blogStatus');
 $routes->get('/ulasan', 'Home::ulasan');
 $routes->post('/postMessage', 'Home::postMessage');
 $routes->get('/edit-user', 'EditUser::index');

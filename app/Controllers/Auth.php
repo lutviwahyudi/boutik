@@ -77,7 +77,7 @@ class Auth extends Controller
                 ]);
 
                 if ($user['role'] == 1) {
-                    return redirect()->to('/');
+                    return redirect()->to('dashboard');
                 }
 
                 return redirect()->to('/');

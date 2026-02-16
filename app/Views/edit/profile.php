@@ -10,7 +10,7 @@
         </div>
 
         <div class="card-body">
-          <form action="<?= base_url('/edit-user/' . $user['id']) ?>" method="post">
+          <form action="<?= base_url('/edit-user/' . $user['id']) ?>" method="post" enctype="multipart/form-data">
 
           <div class="text-center mb-4">
             <img src="<?= $user['image']?>"

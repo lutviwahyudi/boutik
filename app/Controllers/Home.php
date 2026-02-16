@@ -46,6 +46,15 @@ class Home extends BaseController
         return view('pages/profile', $data);
     }
 
+    public function blogStatus(){
+        $data = [
+            'title' => 'Blog Status',
+            'blog' => $this->blogModel->findAll()
+        ];
+        return view('pages/comingsoon', $data);
+    }
+
+
     public function allProduct(){
         
         $data = [

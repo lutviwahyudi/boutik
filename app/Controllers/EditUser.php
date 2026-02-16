@@ -48,7 +48,7 @@ use CodeIgniter\Controller;
             $data['image'] = 'uploads/' . $newName;
         }
 
-        $this->UserModel->updateUser($id, $data);
+        $this->UserModel->update($id, $data);
 
         return redirect()->to('/profile');
     }

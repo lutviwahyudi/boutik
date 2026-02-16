@@ -1,15 +1,4 @@
-<!doctype html>
-<html lang="id">
-<head>
-    <meta charset="utf-8">
-    <title><?= $title ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-
+<?=  view('layout/header')?>
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
@@ -45,7 +34,7 @@
                 <div class="card-body">
                     <h6>Jumlah Produk</h6>
                     <h3 class="fw-bold"><?= count(array_filter($clothes, fn($c) => $c['id'])); ?></h3>
-                    <small class="text-muted"><a href="<?= base_url('/products')?>">Lihat semua produk</a></small>
+                    <small class="text-muted"><a href="<?= base_url('/products')?>" class="btn-link">Lihat semua produk</a></small>
                 </div>
             </div>
         </div>
@@ -55,7 +44,7 @@
                 <div class="card-body">
                     <h6>Ulasan Customer</h6>
                     <h3 class="fw-bold"><?= count(array_filter($message, fn($c) => $c['id'])); ?></h3>
-                    <small class="text-muted"><a href="<?=  base_url('/ulasan') ?>">lihat semua ulasan</a></small>
+                    <small class="text-muted"><a href="<?=  base_url('/ulasan') ?>" class="btn-link">lihat semua ulasan</a></small>
                 </div>
             </div>
         </div>
@@ -70,10 +59,19 @@
         <div class="card-body">
             <p class="mb-1">Login sebagai: <strong>Administrator</strong></p>
             <p class="mb-0">Email: <?= session()->get('email'); ?></p>
+            <p class="mb-0"><a href="<?= base_url('/') ?>" class="btn-link" target="_blank">Lihat Website</a></p>
         </div>
     </div>
-
 </div>
 
+<script src="<?= base_url('template')?>/js/jquery.min.js"></script>
+  <script src="<?= base_url('template')?>/js/plugins.js"></script>
+  <script src="<?= base_url('template')?>/js/SmoothScroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="<?= base_url('template/')?>js/script.min.js"></script>
 </body>
+
 </html>

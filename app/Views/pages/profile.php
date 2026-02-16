@@ -7,7 +7,7 @@
     <div class="col-md-4 mb-4">
       <div class="card shadow-sm text-center">
         <div class="card-body">
-          <img src="<?= base_url('uploads/' . $user['image']); ?>"
+          <img src="<?= base_url($user['image']) ?>"
           class="rounded-circle mb-3"
           width="120" height="120"
           style="object-fit: cover;"

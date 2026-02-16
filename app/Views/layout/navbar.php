@@ -37,20 +37,27 @@
 
                                <!-- Jika user login, tampilkan foto profile -->
                             <?php if(session()->get('logged_in')): ?>
-                                <?php 
-                                    $foto = session()->get('foto'); // nanti ambil dari DB
-                                    $name = session()->get('name'); // nanti ambil dari DB
-                                    $fotoUrl = $foto ? base_url('uploads/'.$foto) : base_url('/template/images/dprofile.png'); 
+                                <?php
+                                    $name = session()->get('name');
+                                    $foto = 'template/images/default-avatar.png';
+                                    if (isset($currentUser)) {
+                                        if (is_array($currentUser) && !empty($currentUser['image'])) {
+                                            $foto = $currentUser['image'];
+                                        } elseif (is_object($currentUser) && !empty($currentUser->image)) {
+                                            $foto = $currentUser->image;
+                                        }
+                                    }
                                 ?>
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center" href="/profile">
-                                        <img 
-                                            src="<?= $fotoUrl ?>" 
-                                            alt="<?= $name ?>?>" 
+                                        <img
+                                            src="<?= base_url($foto) ?>"
+                                            alt="<?= esc($name) ?>"
                                             style="width:40px; height:40px; border-radius:50%; object-fit:cover;"
                                         >
                                     </a>
                                 </li>
+
                             <?php else: ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">Login</a>

@@ -61,7 +61,7 @@
                                                 "Gambar: $gambar";
                                     ?>
 
-                                    <a href="https://wa.me/6281386225719?text=<?= $waMessage ?>" 
+                                    <a href="https://wa.me/628170091122?text=<?= $waMessage ?>" 
                                         target="_blank" 
                                         class="btn btn-dark btn-lg w-100 mt-3">
                                         Pesan Sekarang

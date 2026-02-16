@@ -3,7 +3,7 @@
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
         <h4 class="text-uppercase">Read Blog Posts</h4>
-        <a href="index.html" class="btn-link">View All</a>
+        <a href="<?= base_url('blog/status') ?>" class="btn-link">View All</a>
       </div>
       <div class="row">
         <?php foreach ($blog as $bl) : ?>
